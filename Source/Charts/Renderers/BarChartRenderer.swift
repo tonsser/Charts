@@ -316,7 +316,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 context.setFillColor(dataSet.color(atIndex: j).cgColor)
             }
             
-            context.fill(barRect)
+            context.fill(CGRect(x: barRect.origin.x, y: barRect.origin.y, width: barRect.width, height: barRect.height + 1))
             
             if drawBorder
             {
