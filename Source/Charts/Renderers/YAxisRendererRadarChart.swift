@@ -33,6 +33,8 @@ open class YAxisRendererRadarChart: YAxisRenderer
             axis = axis as? YAxis
             else { return }
         
+        guard axis.drawLabelsEnabled else { axis.axisRange = abs(axis._axisMaximum - axis._axisMinimum); return }
+        
         let labelCount = axis.labelCount
         let range = abs(yMax - yMin)
         
